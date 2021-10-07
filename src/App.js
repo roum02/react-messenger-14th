@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "./Asset/GlobalStyle";
+
 import Template from "./Components/Template";
 import TopBar from "./Components/TopBar";
 import Profile from "./Components/Profile";
+import MessageBox from "./Components/MessageBox";
+import Insert from "./Components/Insert";
 
 function App() {
   return (
@@ -12,6 +15,8 @@ function App() {
       <Template>
         <TopBar />
         <Profile />
+        <MessageBox />
+        <Insert />
       </Template>
     </>
   );
