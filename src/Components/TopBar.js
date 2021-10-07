@@ -7,7 +7,9 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-const Row = styled.div``;
+const Row = styled.div`
+  padding: 0rem 1rem;
+`;
 
 function TopBar() {
   const currentTime = moment().format("HH:mm");
