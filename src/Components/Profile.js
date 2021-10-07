@@ -6,8 +6,11 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   height: 6rem;
+  width: 100%;
   background-color: #9bbbd4;
   box-shadow: 0px 8px 10px #556677;
+  position: absolute;
+  z-index: 99;
 `;
 
 const ProfileImage = styled.img`
