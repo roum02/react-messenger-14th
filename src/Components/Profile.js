@@ -19,6 +19,7 @@ const ProfileImage = styled.img`
   width: 5rem;
   height: 5rem;
   object-fit: cover;
+  margin-left: 1rem;
 `;
 
 const ProfileText = styled.div`

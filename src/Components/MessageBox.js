@@ -4,7 +4,8 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   display: flex;
   background-color: #9bbbd4;
-  height: 100vh;
+  height: 90vh;
+  overflow-y: scroll;
 `;
 
 function MessageBox() {
