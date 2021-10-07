@@ -1,7 +1,16 @@
 import React from "react";
+import styled from "styled-components";
+import Template from "./Components/Template";
+import TopBar from "./Components/TopBar";
 
 function App() {
-  return <div> 14기 프론트엔드 짱 =_=</div>;
+  return (
+    <div>
+      <Template>
+        <TopBar />
+      </Template>
+    </div>
+  );
 }
 
 export default App;
