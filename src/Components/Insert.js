@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 
 const InsertBox = styled.form`
@@ -35,10 +35,27 @@ const Button = styled.button`
   }
 `;
 
-function Insert() {
+function Insert({ onInsert }) {
+  const [value, setValue] = useState("");
+  const onChange = useCallback((e) => {
+    setValue(e.target.value);
+  }, []);
+  const onSubmit = useCallback(
+    (e) => {
+      onInsert(value);
+      setValue("");
+      e.preventDefault();
+    },
+    [onInsert, value]
+  );
+
   return (
-    <InsertBox>
-      <Input placeholder="메시지를 입력하세요" />
+    <InsertBox onSubmit={onSubmit}>
+      <Input
+        placeholder="메시지를 입력하세요"
+        value={value}
+        onChange={onChange}
+      />
       <Button type="submit">전송</Button>
     </InsertBox>
   );
