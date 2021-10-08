@@ -52,7 +52,7 @@ const ProfileImage = styled.img`
 `;
 
 function MessageItem({ message }) {
-  const { id, text, isMe } = message;
+  const { text, isMe } = message;
   return (
     <>
       {isMe ? (
