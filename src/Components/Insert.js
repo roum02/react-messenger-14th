@@ -42,7 +42,8 @@ function Insert({ onInsert }) {
   }, []);
   const onSubmit = useCallback(
     (e) => {
-      onInsert(value);
+      value ? onInsert(value) : alert("공백 입력은 불가합니다.");
+
       setValue("");
       e.preventDefault();
     },
