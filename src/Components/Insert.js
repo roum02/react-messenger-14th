@@ -35,10 +35,6 @@ const Button = styled.button`
   }
 `;
 
-const Scroll = (e) => {
-  document.getElementById("root").scrollBy(0, 100);
-};
-
 function Insert({ onInsert }) {
   const [value, setValue] = useState("");
   const onChange = useCallback((e) => {
