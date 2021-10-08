@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import Apeach from "../Asset/Apeach.jpg";
@@ -35,11 +35,11 @@ const ProfileText = styled.div`
   }
 `;
 
-function ProfileItem({ user, onToggle }) {
-  const { id, name, isMe } = user;
+function ProfileItem({ message, onToggle, bool }) {
+  // const { id, text, isMe } = message;
   return (
-    <Wrapper onClick={() => onToggle(user.id)}>
-      {isMe ? (
+    <Wrapper onClick={() => onToggle()}>
+      {!bool ? (
         <>
           <ProfileImage src={Apeach} alt="프로필" />
           <ProfileText>

@@ -8,8 +8,9 @@ const Wrapper = styled.div`
   flex-direction: column;
   display: flex;
   background-color: #9bbbd4;
-  height: 80vh;
+  height: 70vh;
   margin-top: 6rem;
+  padding-bottom: 4rem;
   overflow-y: scroll;
 `;
 
