@@ -35,6 +35,10 @@ const Button = styled.button`
   }
 `;
 
+const Scroll = (e) => {
+  document.getElementById("root").scrollBy(0, 100);
+};
+
 function Insert({ onInsert }) {
   const [value, setValue] = useState("");
   const onChange = useCallback((e) => {
@@ -42,7 +46,8 @@ function Insert({ onInsert }) {
   }, []);
   const onSubmit = useCallback(
     (e) => {
-      onInsert(value);
+      value ? onInsert(value) : alert("공백 입력은 불가합니다.");
+
       setValue("");
       e.preventDefault();
     },
