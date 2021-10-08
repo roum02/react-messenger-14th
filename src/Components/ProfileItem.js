@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+
 import Apeach from "../Asset/Apeach.jpg";
+import Neo from "../Asset/Neo.jpg";
 
 const Wrapper = styled.div`
   display: flex;
@@ -33,16 +35,29 @@ const ProfileText = styled.div`
   }
 `;
 
-function Profile() {
+function ProfileItem({ user, onToggle }) {
+  const { id, name, isMe } = user;
   return (
-    <Wrapper>
-      <ProfileImage src={Apeach} alt="프로필" />
-      <ProfileText>
-        <h3>어피치</h3>
-        <p>현재 활동 중</p>
-      </ProfileText>
+    <Wrapper onClick={() => onToggle(user.id)}>
+      {isMe ? (
+        <>
+          <ProfileImage src={Apeach} alt="프로필" />
+          <ProfileText>
+            <h3>어피치</h3>
+            <p>현재 활동 중</p>
+          </ProfileText>
+        </>
+      ) : (
+        <>
+          <ProfileImage src={Neo} alt="프로필" />
+          <ProfileText>
+            <h3>네오</h3>
+            <p>현재 활동 중</p>
+          </ProfileText>
+        </>
+      )}
     </Wrapper>
   );
 }
 
-export default Profile;
+export default ProfileItem;
