@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef } from "react";
 import GlobalStyle from "./Asset/GlobalStyle";
 
 import Template from "./Components/Template";
@@ -27,18 +27,15 @@ function App() {
     SetBool(!bool);
   };
 
-  const onInsert = useCallback(
-    (text) => {
-      const message = {
-        id: nextId.current,
-        text,
-        isMe: bool,
-      };
-      setMessages(messages.concat(message));
-      nextId.current += 1;
-    },
-    [messages]
-  );
+  const onInsert = (text) => {
+    const message = {
+      id: nextId.current,
+      text,
+      isMe: bool,
+    };
+    setMessages(messages.concat(message));
+    nextId.current += 1;
+  };
 
   return (
     <>

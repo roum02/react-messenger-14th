@@ -39,7 +39,7 @@ function ProfileItem({ message, onToggle, bool }) {
   // const { id, text, isMe } = message;
   return (
     <Wrapper onClick={() => onToggle()}>
-      {!bool ? (
+      {bool ? (
         <>
           <ProfileImage src={Apeach} alt="프로필" />
           <ProfileText>
