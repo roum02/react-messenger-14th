@@ -1,12 +1,18 @@
 import React, { useState, useRef } from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import GlobalStyle from "../Asset/GlobalStyle";
+import styled from "styled-components";
 
 import Template from "../Components/Template";
 import TopBar from "../Components/TopBar";
 import ProfileBox from "../Components/ProfileBox";
 import MessageBox from "../Components/MessageBox";
 import Insert from "../Components/Insert";
+import Menu from "../Components/Menu";
+
+const Wrapper = styled.div`
+  display: flex;
+`;
 
 function ChatPage() {
   const [messages, setMessages] = useState([
@@ -39,15 +45,16 @@ function ChatPage() {
   };
 
   return (
-    <>
+    <Wrapper>
       <GlobalStyle />
+      <Menu />
       <Template>
         <TopBar />
         <ProfileBox messages={messages} onToggle={onToggle} bool={bool} />
         <MessageBox messages={messages} />
         <Insert onInsert={onInsert} bool={bool} />
       </Template>
-    </>
+    </Wrapper>
   );
 }
 

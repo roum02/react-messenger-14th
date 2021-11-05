@@ -1,29 +1,17 @@
-import React, { useState, useRef } from "react";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useState } from "react";
 import styled from "styled-components";
 import GlobalStyle from "../Asset/GlobalStyle";
 import FriendsItem from "../Components/FriendsItem";
 
-import Apeach from "../Asset/Apeach.jpg";
-import Neo from "../Asset/Neo.jpg";
+import Menu from "../Components/Menu";
 
 const Wrapper = styled.div`
   display: flex;
 `;
 
-const MenuBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(66, 54, 48);
-  width: 5rem;
-  height: 100vh;
-`;
-
 const FriendsBox = styled.div`
   padding-left: 1rem;
 `;
-
-const FriendsList = styled.div``;
 
 const FriendsPage = () => {
   const [friends, setFriends] = useState([
@@ -52,7 +40,7 @@ const FriendsPage = () => {
   return (
     <Wrapper>
       <GlobalStyle />
-      <MenuBox></MenuBox>
+      <Menu />
       <FriendsBox>
         <h2>친구목록</h2>
         {friends.map((friend) => (

@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import GlobalStyle from "./Asset/GlobalStyle";
-import styled from "styled-components";
 
 import ChatPage from "./Pages/ChatPage";
 import FriendsPage from "./Pages/FriendsPage";
