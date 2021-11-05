@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Route, Link } from "react-router-dom";
 
 import User from "../Asset/user.png";
 import ChatBubble from "../Asset/speech-bubble.png";
