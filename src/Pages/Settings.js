@@ -32,6 +32,7 @@ const Button = styled.div`
   background-color: #fef01b;
   padding: 0.6rem;
   border-radius: 20px;
+  margin-right: 1rem;
 `;
 
 const Settings = () => {

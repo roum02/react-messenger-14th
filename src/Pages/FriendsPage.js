@@ -15,7 +15,30 @@ const FriendsBox = styled.div`
   width: 100%;
 `;
 
+const Row = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const Button = styled.div`
+  background-color: #fef01b;
+  padding: 0.6rem;
+  border-radius: 10px;
+  margin-right: 1rem;
+`;
+
+const Input = styled.input`
+  width: 90%;
+  border-color: none;
+  outline: none;
+  height: 2rem;
+  margin: 1rem 0rem 2rem 2rem;
+`;
+
 const FriendsPage = () => {
+  const [show, setShow] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const [friends, setFriends] = useState([
     {
       id: 1,
@@ -39,22 +62,39 @@ const FriendsPage = () => {
     },
   ]);
 
+  function onClick() {
+    setShow(!show);
+  }
+
   return (
     <Wrapper>
       <GlobalStyle />
       <Menu />
       <FriendsBox>
         <TopBar />
-        <h2>친구목록</h2>
+        <Row>
+          <h2>친구목록</h2>
+          <Button onClick={onClick}>친구 검색</Button>
+        </Row>
+        {show ? (
+          <Input
+            style={{ display: "block" }}
+            type="texy"
+            onChange={(e) => {
+              setSearchTerm(e.target.value);
+            }}
+          />
+        ) : (
+          <Input style={{ display: "none" }} />
+        )}
+
         {friends.map((friend) => (
-          <>
-            <FriendsItem
-              key={friend.id}
-              name={friend.name}
-              photo={friend.photo}
-              text={friend.text}
-            />
-          </>
+          <FriendsItem
+            key={friend.id}
+            name={friend.name}
+            photo={friend.photo}
+            text={friend.text}
+          />
         ))}
       </FriendsBox>
     </Wrapper>
