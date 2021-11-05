@@ -4,6 +4,7 @@ import GlobalStyle from "./Asset/GlobalStyle";
 
 import ChatPage from "./Pages/ChatPage";
 import FriendsPage from "./Pages/FriendsPage";
+import Settings from "./Pages/Settings";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <GlobalStyle />
         <Route path="/" element={<FriendsPage />} />
         <Route path="/chatPage" element={<ChatPage />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </Router>
   );

@@ -32,7 +32,9 @@ const Menu = () => {
         <Link to="/chatPage">
           <ImgBox src={ChatBubble} />
         </Link>
-        <ImgBox src={Setting} />
+        <Link to="/settings">
+          <ImgBox src={Setting} />
+        </Link>
       </MenuBox>
     </>
   );
