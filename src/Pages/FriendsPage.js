@@ -38,7 +38,7 @@ const Input = styled.input`
 
 const FriendsPage = () => {
   const [show, setShow] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+  //const [searchTerm, setSearchTerm] = useState("");
   const [friends, setFriends] = useState([
     {
       id: 1,
@@ -80,9 +80,9 @@ const FriendsPage = () => {
           <Input
             style={{ display: "block" }}
             type="texy"
-            onChange={(e) => {
-              setSearchTerm(e.target.value);
-            }}
+            // onChange={(e) => {
+            //   setSearchTerm(e.target.value);
+            // }}
           />
         ) : (
           <Input style={{ display: "none" }} />

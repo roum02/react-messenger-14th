@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../Asset/GlobalStyle";
 import TopBar from "../Components/TopBar";
@@ -44,7 +44,10 @@ const Settings = () => {
         <TopBar />
         <h3>더보기</h3>
         <ImgBox>
-          <img src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMDJfOTAg/MDAxNTE3NTAyODA4ODI0.cxuAkiwL2Dw5FUxUYWTwA2GUwlqpLzgRwjHirNDC6Cog.fTa3ixKaDFaD7DM6ctC0BodxnM_1DTdUsp3IzmOwsJkg.PNG.marketstory24/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1_%EB%A1%9C%EA%B3%A0_3.png?type=w800" />
+          <img
+            alt="카카오톡"
+            src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMDJfOTAg/MDAxNTE3NTAyODA4ODI0.cxuAkiwL2Dw5FUxUYWTwA2GUwlqpLzgRwjHirNDC6Cog.fTa3ixKaDFaD7DM6ctC0BodxnM_1DTdUsp3IzmOwsJkg.PNG.marketstory24/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1_%EB%A1%9C%EA%B3%A0_3.png?type=w800"
+          />
         </ImgBox>
         <h4>새 소식</h4>
         <h4>공지사항</h4>
