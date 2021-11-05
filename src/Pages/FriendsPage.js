@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import GlobalStyle from "../Asset/GlobalStyle";
 import FriendsItem from "../Components/FriendsItem";
+import TopBar from "../Components/TopBar";
 
 import Menu from "../Components/Menu";
 
@@ -11,6 +12,7 @@ const Wrapper = styled.div`
 
 const FriendsBox = styled.div`
   padding-left: 1rem;
+  width: 100%;
 `;
 
 const FriendsPage = () => {
@@ -42,6 +44,7 @@ const FriendsPage = () => {
       <GlobalStyle />
       <Menu />
       <FriendsBox>
+        <TopBar />
         <h2>친구목록</h2>
         {friends.map((friend) => (
           <>

@@ -12,6 +12,7 @@ import Menu from "../Components/Menu";
 
 const Wrapper = styled.div`
   display: flex;
+  width: 100%;
 `;
 
 function ChatPage() {

@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import Apeach from "../Asset/Apeach.jpg";
-import Neo from "../Asset/Neo.jpg";
-
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
