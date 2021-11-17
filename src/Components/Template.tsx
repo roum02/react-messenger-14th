@@ -9,7 +9,11 @@ const Container = styled.div`
 
 const Content = styled.div``;
 
-function Template({ children }) {
+type TemplateProps = {
+  children?: React.ReactNode;
+};
+
+function Template({ children }: TemplateProps) {
   return (
     <Container>
       <Content>{children}</Content>

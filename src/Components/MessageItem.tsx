@@ -51,7 +51,11 @@ const ProfileImage = styled.img`
   margin-left: 1rem;
 `;
 
-function MessageItem({ message }) {
+type MessageItemProps = {
+  message: { id: number; text: string; isMe: boolean };
+};
+
+function MessageItem({ message }: MessageItemProps) {
   const { text, isMe } = message;
   return (
     <>

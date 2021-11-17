@@ -29,7 +29,13 @@ const ProfileText = styled.div`
   }
 `;
 
-function FriendsItem({ id, photo, name, text }) {
+type FriendsItemProps = {
+  photo: string;
+  name: string;
+  text: string;
+};
+
+function FriendsItem({ photo, name, text }: FriendsItemProps) {
   return (
     <Wrapper>
       <>

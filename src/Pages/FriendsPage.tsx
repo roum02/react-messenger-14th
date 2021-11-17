@@ -79,7 +79,7 @@ const FriendsPage = () => {
         {show ? (
           <Input
             style={{ display: "block" }}
-            type="texy"
+            type="text"
             // onChange={(e) => {
             //   setSearchTerm(e.target.value);
             // }}

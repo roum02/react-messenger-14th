@@ -20,11 +20,11 @@ function ChatPage() {
     { id: 3, text: "만나서 반가워!", isMe: true },
   ]);
 
-  const [bool, SetBool] = useState(true);
+  const [bool, SetBool] = useState<boolean>(true);
 
   const nextId = useRef(4);
 
-  const onToggle = (id) => {
+  const onToggle = () => {
     // setMessages(
     //   messages.map((message) =>
     //     message.id === id ? { ...message, isMe: !message.isMe } : message
@@ -33,8 +33,9 @@ function ChatPage() {
     SetBool(!bool);
   };
 
-  const onInsert = (text) => {
-    const message = {
+  const onInsert = (text: string) => {
+    let message: { id: number; text: string; isMe: boolean };
+    message = {
       id: nextId.current,
       text,
       isMe: bool,
@@ -51,7 +52,7 @@ function ChatPage() {
         <TopBar />
         <ProfileBox messages={messages} onToggle={onToggle} bool={bool} />
         <MessageBox messages={messages} />
-        <Insert onInsert={onInsert} bool={bool} />
+        <Insert onInsert={onInsert} />
       </Template>
     </Wrapper>
   );

@@ -14,7 +14,11 @@ const Wrapper = styled.div`
   overflow-y: scroll;
 `;
 
-function MessageBox({ messages }) {
+type MessageBoxProps = {
+  messages: { id: number; text: string; isMe: boolean }[];
+};
+
+function MessageBox({ messages }: MessageBoxProps) {
   return (
     <Wrapper>
       {messages.map((message) => (

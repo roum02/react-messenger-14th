@@ -35,7 +35,13 @@ const ProfileText = styled.div`
   }
 `;
 
-function ProfileItem({ message, onToggle, bool }) {
+type ProfileItemProps = {
+  message: { id: number; text: string; isMe: boolean };
+  onToggle: () => void;
+  bool: boolean;
+};
+
+function ProfileItem({ message, onToggle, bool }: ProfileItemProps) {
   // const { id, text, isMe } = message;
   return (
     <Wrapper onClick={() => onToggle()}>

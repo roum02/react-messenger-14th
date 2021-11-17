@@ -1,7 +1,13 @@
 import React from "react";
 import ProfileItem from "./ProfileItem";
 
-function ProfileBox({ messages, users, onToggle, bool }) {
+type ProfileBoxProps = {
+  messages: { id: number; text: string; isMe: boolean }[];
+  onToggle: () => void;
+  bool: boolean;
+};
+
+function ProfileBox({ messages, onToggle, bool }: ProfileBoxProps) {
   return (
     <>
       {/* {users.map((user) => (

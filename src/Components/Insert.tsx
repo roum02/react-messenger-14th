@@ -35,8 +35,12 @@ const Button = styled.button`
   }
 `;
 
-function Insert({ onInsert }) {
-  const [value, setValue] = useState("");
+type onInsertProps = {
+  onInsert: (text: string) => void;
+};
+
+function Insert({ onInsert }: onInsertProps) {
+  const [value, setValue] = useState<string>("");
   const onChange = useCallback((e) => {
     setValue(e.target.value);
   }, []);
