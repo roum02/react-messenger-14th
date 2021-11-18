@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import palette from "../styles/palette";
 import GlobalStyle from "../Asset/GlobalStyle";
 import FriendsItem from "../Components/FriendsItem";
 import TopBar from "../Components/TopBar";
@@ -23,12 +24,12 @@ const Row = styled.div`
 `;
 
 const Button = styled.div`
-  background-color: #fef01b;
+  background-color: ${palette.yellow};
   padding: 0.6rem;
   border-radius: 10px;
   margin-right: 1rem;
   &:hover {
-    background: gold;
+    background: ${palette.gold};
   }
 `;
 

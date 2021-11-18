@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Data from "../Data/friends.json";
+import palette from "../styles/palette";
 
 const MyContainer = styled.div`
   display: flex;
@@ -21,7 +22,7 @@ const MyText = styled.div`
   align-items: center;
   margin: 1rem;
   border-radius: 10px 10px 0px 10px;
-  background-color: #fef01b;
+  background-color: ${palette.yellow};
   border: 5px;
   height: 3rem;
   width: 13rem;
@@ -33,7 +34,7 @@ const YourText = styled.div`
   align-items: center;
   margin: 1rem;
   border-radius: 10px 10px 10px 0px;
-  background-color: white;
+  background-color: ${palette.white};
   border: 5px;
   height: 3rem;
   width: 13rem;

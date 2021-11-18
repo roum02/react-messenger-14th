@@ -1,6 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../Asset/GlobalStyle";
+import palette from "../styles/palette";
 import TopBar from "../Components/TopBar";
 
 import Menu from "../Components/Menu";
@@ -29,7 +29,7 @@ const Row = styled.div`
 `;
 
 const Button = styled.div`
-  background-color: #fef01b;
+  background-color: ${palette.yellow};
   padding: 0.6rem;
   border-radius: 20px;
   margin-right: 1rem;
