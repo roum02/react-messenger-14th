@@ -1,4 +1,3 @@
-import React from "react";
 import ProfileItem from "./ProfileItem";
 
 type ProfileBoxProps = {
@@ -10,18 +9,9 @@ type ProfileBoxProps = {
 function ProfileBox({ messages, onToggle, bool }: ProfileBoxProps) {
   return (
     <>
-      {/* {users.map((user) => (
-        <ProfileItem
-          key={user.id}
-          // user={user}
-          onToggle={onToggle}
-          bool={bool}
-        />
-      ))} */}
       {messages.map((message) => (
         <ProfileItem
           key={message.id}
-          // user={user}
           message={message}
           onToggle={onToggle}
           bool={bool}

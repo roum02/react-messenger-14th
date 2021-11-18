@@ -1,14 +1,11 @@
-import React from "react";
 import styled from "styled-components";
-
-import Apeach from "../Asset/Apeach.jpg";
-import Neo from "../Asset/Neo.jpg";
+import Data from "../Data/friends.json";
 
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
   height: 6rem;
-  width: 100%;
+  width: 96%;
   background-color: #9bbbd4;
   box-shadow: 0px 8px 10px #556677;
   position: absolute;
@@ -41,13 +38,12 @@ type ProfileItemProps = {
   bool: boolean;
 };
 
-function ProfileItem({ message, onToggle, bool }: ProfileItemProps) {
-  // const { id, text, isMe } = message;
+function ProfileItem({ onToggle, bool }: ProfileItemProps) {
   return (
     <Wrapper onClick={() => onToggle()}>
       {bool ? (
         <>
-          <ProfileImage src={Apeach} alt="프로필" />
+          <ProfileImage src={Data.friends[0].photo} alt="프로필" />
           <ProfileText>
             <h3>어피치</h3>
             <p>현재 활동 중</p>
@@ -55,7 +51,7 @@ function ProfileItem({ message, onToggle, bool }: ProfileItemProps) {
         </>
       ) : (
         <>
-          <ProfileImage src={Neo} alt="프로필" />
+          <ProfileImage src={Data.friends[1].photo} alt="프로필" />
           <ProfileText>
             <h3>네오</h3>
             <p>현재 활동 중</p>

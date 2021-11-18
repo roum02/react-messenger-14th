@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import GlobalStyle from "../Asset/GlobalStyle";
 import styled from "styled-components";
 
@@ -22,18 +22,13 @@ function ChatPage() {
 
   const [bool, SetBool] = useState<boolean>(true);
 
-  const nextId = useRef(4);
+  const nextId = useRef<number>(4);
 
-  const onToggle = () => {
-    // setMessages(
-    //   messages.map((message) =>
-    //     message.id === id ? { ...message, isMe: !message.isMe } : message
-    //   )
-    // );
+  const onToggle = (): void => {
     SetBool(!bool);
   };
 
-  const onInsert = (text: string) => {
+  const onInsert = (text: string): void => {
     let message: { id: number; text: string; isMe: boolean };
     message = {
       id: nextId.current,

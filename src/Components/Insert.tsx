@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import styled from "styled-components";
 
 const InsertBox = styled.form`
@@ -7,7 +7,7 @@ const InsertBox = styled.form`
   align-items: flex-start;
   box-shadow: 0px 8px 10px #556677;
   background-color: white;
-  width: 100%;
+  width: 97%;
   height: 7rem;
   position: fixed;
   bottom: 0;
@@ -27,7 +27,7 @@ const Button = styled.button`
   background: #fef01b;
   height: 3rem;
   width: 4rem;
-  margin: 1rem;
+  margin: 1rem 3rem 1rem 1rem;
   border: none;
   outline: none;
   &:hover {

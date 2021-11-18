@@ -1,8 +1,5 @@
-import React from "react";
 import styled from "styled-components";
-
-import Apeach from "../Asset/Apeach.jpg";
-import Neo from "../Asset/Neo.jpg";
+import Data from "../Data/friends.json";
 
 const MyContainer = styled.div`
   display: flex;
@@ -62,11 +59,11 @@ function MessageItem({ message }: MessageItemProps) {
       {isMe ? (
         <MyContainer>
           <MyText>{text}</MyText>
-          <ProfileImage src={Apeach} alt="프로필" />
+          <ProfileImage src={Data.friends[0].photo} alt="프로필" />
         </MyContainer>
       ) : (
         <YourContainer>
-          <ProfileImage src={Neo} alt="프로필" />
+          <ProfileImage src={Data.friends[1].photo} alt="프로필" />
           <YourText>{text}</YourText>
         </YourContainer>
       )}
