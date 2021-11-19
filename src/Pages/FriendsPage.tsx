@@ -8,6 +8,8 @@ import TopBar from "../Components/TopBar";
 import Menu from "../Components/Menu";
 import Data from "../Data/friends.json";
 
+import useBool from "../Hooks/useBool";
+
 const Wrapper = styled.div`
   display: flex;
 `;
@@ -42,12 +44,13 @@ const Input = styled.input`
 `;
 
 const FriendsPage = () => {
-  const [show, setShow] = useState<boolean>(false);
+  //const [bool, setBool] = useState<boolean>(false);
+  const bools = useBool(false);
   const [searchFriends, setSearchFriends] = useState<string>("");
 
-  function onClick(): void {
-    setShow(!show);
-  }
+  // function onClick(): void {
+  //   setBool(!bool);
+  // }
 
   function FindFriends() {
     let data = Data.friends.filter(
@@ -79,9 +82,9 @@ const FriendsPage = () => {
         <TopBar />
         <Row>
           <h2>친구목록</h2>
-          <Button onClick={onClick}>친구 검색</Button>
+          <Button onClick={bools.onClick}>친구 검색</Button>
         </Row>
-        {show ? (
+        {bools.bool ? (
           <Input
             style={{ display: "block" }}
             type="text"
