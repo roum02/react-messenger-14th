@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import GlobalStyle from "../Asset/GlobalStyle";
 import styled from "styled-components";
 
@@ -8,6 +8,8 @@ import ProfileBox from "../Components/ProfileBox";
 import MessageBox from "../Components/MessageBox";
 import Insert from "../Components/Insert";
 import Menu from "../Components/Menu";
+
+import useBool from "../Hooks/useBool";
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,24 +22,21 @@ function ChatPage() {
     { id: 3, text: "만나서 반가워!", isMe: true },
   ]);
 
-  const [bool, SetBool] = useState(true);
+  //const [bool, SetBool] = useState<boolean>(true);
+  const bools = useBool(false);
 
-  const nextId = useRef(4);
+  const nextId = useRef<number>(4);
 
-  const onToggle = (id) => {
-    // setMessages(
-    //   messages.map((message) =>
-    //     message.id === id ? { ...message, isMe: !message.isMe } : message
-    //   )
-    // );
-    SetBool(!bool);
-  };
+  // const onToggle = (): void => {
+  //   SetBool(!bool);
+  // };
 
-  const onInsert = (text) => {
-    const message = {
+  const onInsert = (text: string): void => {
+    let message: { id: number; text: string; isMe: boolean };
+    message = {
       id: nextId.current,
       text,
-      isMe: bool,
+      isMe: bools.bool,
     };
     setMessages(messages.concat(message));
     nextId.current += 1;
@@ -49,9 +48,13 @@ function ChatPage() {
       <Menu />
       <Template>
         <TopBar />
-        <ProfileBox messages={messages} onToggle={onToggle} bool={bool} />
+        <ProfileBox
+          messages={messages}
+          onToggle={bools.onToggle}
+          bool={bools.bool}
+        />
         <MessageBox messages={messages} />
-        <Insert onInsert={onInsert} bool={bool} />
+        <Insert onInsert={onInsert} />
       </Template>
     </Wrapper>
   );

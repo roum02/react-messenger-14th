@@ -1,8 +1,6 @@
-import React from "react";
 import styled from "styled-components";
-
-import Apeach from "../Asset/Apeach.jpg";
-import Neo from "../Asset/Neo.jpg";
+import Data from "../Data/friends.json";
+import palette from "../styles/palette";
 
 const MyContainer = styled.div`
   display: flex;
@@ -24,7 +22,7 @@ const MyText = styled.div`
   align-items: center;
   margin: 1rem;
   border-radius: 10px 10px 0px 10px;
-  background-color: #fef01b;
+  background-color: ${palette.yellow};
   border: 5px;
   height: 3rem;
   width: 13rem;
@@ -36,7 +34,7 @@ const YourText = styled.div`
   align-items: center;
   margin: 1rem;
   border-radius: 10px 10px 10px 0px;
-  background-color: white;
+  background-color: ${palette.white};
   border: 5px;
   height: 3rem;
   width: 13rem;
@@ -51,18 +49,22 @@ const ProfileImage = styled.img`
   margin-left: 1rem;
 `;
 
-function MessageItem({ message }) {
+type MessageItemProps = {
+  message: { id: number; text: string; isMe: boolean };
+};
+
+function MessageItem({ message }: MessageItemProps) {
   const { text, isMe } = message;
   return (
     <>
       {isMe ? (
         <MyContainer>
           <MyText>{text}</MyText>
-          <ProfileImage src={Apeach} alt="프로필" />
+          <ProfileImage src={Data.friends[0].photo} alt="프로필" />
         </MyContainer>
       ) : (
         <YourContainer>
-          <ProfileImage src={Neo} alt="프로필" />
+          <ProfileImage src={Data.friends[1].photo} alt="프로필" />
           <YourText>{text}</YourText>
         </YourContainer>
       )}

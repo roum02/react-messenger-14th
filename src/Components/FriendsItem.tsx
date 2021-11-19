@@ -1,11 +1,10 @@
-import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
   height: 6rem;
-  width: 300%;
+  width: 100%;
   border-bottom: 1px lightgrey solid;
 `;
 
@@ -29,7 +28,13 @@ const ProfileText = styled.div`
   }
 `;
 
-function FriendsItem({ id, photo, name, text }) {
+type FriendsItemProps = {
+  photo: string;
+  name: string;
+  text: string;
+};
+
+function FriendsItem({ photo, name, text }: FriendsItemProps) {
   return (
     <Wrapper>
       <>
