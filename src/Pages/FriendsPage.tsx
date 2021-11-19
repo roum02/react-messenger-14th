@@ -9,7 +9,6 @@ import Menu from "../Components/Menu";
 import Data from "../Data/friends.json";
 
 import useBool from "../Hooks/useBool";
-import useFriends from "../Hooks/useFriends";
 
 const Wrapper = styled.div`
   display: flex;
