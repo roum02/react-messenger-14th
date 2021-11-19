@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import Data from "../Data/friends.json";
+import palette from "../styles/palette";
 
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
   height: 6rem;
   width: 96%;
-  background-color: #9bbbd4;
-  box-shadow: 0px 8px 10px #556677;
+  background-color: ${palette.blue};
+  box-shadow: 0px 8px 10px ${palette.shadow};
   position: absolute;
   z-index: 99;
 `;

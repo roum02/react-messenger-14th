@@ -14,6 +14,7 @@ const MenuBox = styled.div`
   background-color: ${palette.brown};
   width: 5rem;
   height: 100vh;
+  z-index: 999;
 `;
 
 const ImgBox = styled.img`

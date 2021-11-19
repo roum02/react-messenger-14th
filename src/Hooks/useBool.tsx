@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-export default function useBool(boolProps: boolean = false) {
+export default function useBool(boolProps: boolean = true) {
   const [bool, setBool] = useState<boolean>(boolProps);
 
-  function onClick(): void {
+  function onToggle(): void {
     setBool(!bool);
   }
 
-  return { bool, onClick };
+  return { bool, onToggle };
 }
